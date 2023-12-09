@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+<!-- appereance before :-->
+  <style>
+*{
+  box-sizing: border-box;
+  scroll-behavior: smooth;
+  margin: 0;
+  padding: 0;
+}
+ /*  .container{
+    height: 100%;
+    width: 100%;
+  } */
+  section{
+    height: 70vh;
+    padding-top: 5rem;
+  }
+  .homepage{
+    position: fixed;
+    top: 0;
+    width: 100%;
+    display: flex;
+    height: auto;
+    align-items: center;
+    justify-content: space-between;
+    background-color: rgb(10, 129, 142);
+    color: #fff;
+    padding: 1.2rem;
+    z-index: 1200;
+    
+  }
+  .hamburger{
+    position: absolute;
+    right: 13px;
+  }
+  .hamburger span{
+    display: block;
+    width: 50px;
+    margin-bottom: 6px;
+    height: 5px;
+    background-color: #000;
+    z-index: 999;
+    visibility: hidden;
+  }
+  .title h4{
+    font-size: 2rem;
+  }
+  ul {
+    display: flex;
+    gap: 20px;
+  }
+  ul li{
+    list-style: none;
+    font-size: 1.8rem;
+  }
+  ul li a{
+    text-decoration: none;
+    color: #fff;
+  }
+
+  #projects .card-container{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    gap: 10px;
+    
+  }
+  .card-container .card{
+    margin: 3rem;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    border: 2px solid #000;
+    padding: 1.2rem;
+    text-align: center;
+    border-radius: 10px;
+    box-shadow: 2px 2px rgba(0, 0, 0, 0.5);
+    transition: all 0.3s;
+  }
+  .card-container .card:hover{
+    transform: scale(1.1);
+  }
+  .card-container .card p{
+    text-align: left;
+  }
+ 
+
+
+  @media screen and (max-width:990px){
+    #projects .card-container{
+      display: flex;
+      flex-direction: column;
+      gap: 0;
+
+    } 
+    #contact{
+      margin-top: 30rem;
+    }
+   
+    .hamburger span{
+        display: block;
+        visibility: visible;
+      }
+      
+      ul{
+        position: absolute;
+        right: 3rem;
+        top: 3rem;
+        display: flex;
+        align-items: center;
+        flex-direction: column;
+        background-color: rgb(52, 48, 48);
+        padding: 2rem;
+        display: none;
+      }
+  }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="homepage">
+
+      <div class="title">
+        <h4>PORTFOLIO</h4>
+      </div>
+      <ul>
+        <li><a href="#introduction">Introduction</a></li>
+        <li><a href="#skills">Skills</a></li>
+        <li><a href="#projects">Projects</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+      <div class="hamburger" onclick="click()">
+        <span></span>
+        <span></span>
+        <span></span>
+      </div>
+    </div>
+    <section id="introduction">Introduction</section>
+    <section id="skills">Skills</section>
+    <section id="projects">
+      <h1 style="text-align: center;">projects</h1>
+      <div class="card-container">
+        <div class="card">
+          <h2>Project 1</h2>
+          <p class="about">Lorem ipsum dolor sit amet consectetur adipisicing elit. Laboriosam alias consequatur voluptas dolorem commodi saepe nisi adipisci totam, repellat iure, provident excepturi eum esse blanditiis a facilis at dolor nobis?</p>
+          <p class="certification-details"><a href="#">click hete to view certification status</a></p>
+        </div>
+        <div class="card">
+          <h2>project-2</h2>
+          <p class="about">Lorem ipsum dolor sit amet consectetur adipisicing elit. Aut labore amet libero cumque cupiditate voluptatem incidunt omnis vitae, nam debitis asperiores voluptatibus magni, odio sapiente, unde architecto blanditiis nobis! Harum!</p>
+          <p class="certification-details"><a href="#">click hete to view certification status</a></p>
+        </div>
+        <div class="card">
+          <h2>project-3</h2>
+          <p class="about">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nisi impedit eligendi excepturi, facilis dolorum repellat harum dolor saepe natus illum voluptas corporis blanditiis voluptatum ad eveniet expedita totam veniam suscipit.</p>
+          <p class="certification-details"><a href="#">click hete to view certification status</a></p>
+        </div>
+      </div>
+    </section>
+    <section id="contact">Contact</section>
+  </div>
+
+  <script>
+  
+    let ham=document.querySelector('.hamburger');
+    let db=document.querySelector('ul');
+
+    ham.addEventListener('click',function(){
+      db.style.display="block";
+      if (db.style.display="block"){
+        ham.addEventListener('click',function(){
+          db.style.display="none";
+          
+        });
+        
+      }
+    });
+  </script>
+</body>
+</html>

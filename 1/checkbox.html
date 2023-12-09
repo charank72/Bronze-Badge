@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+  /*   input[type="radio"],input[type="checkbox"]{
+      appearance: none;
+      
+    } */
+    input{
+      appearance: none;
+    }
+    input[type="radio"]{
+      border: 2px solid #000;
+      width: 50px;
+      height: 50px;
+      border-radius: 50%;
+    }
+    input[type="checkbox"]{
+      border: 3px solid ;
+      width: 50px;
+      height: 50px;
+    }
+    input:checked{
+      border-color: red;
+      background-color: green;
+      animation-name: checked;
+      transition: all 5s;
+    }
+    input[type="checkbox"]::after{
+      color: red;
+    }
+    @keyframes checked{
+      0%{
+        border-radius: 0;
+      }
+      100%{
+        border-radius: 100%;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div>
+    <form action="">
+      <input type="radio" name="radio">
+      <input type="radio" name="radio">
+      <input type="checkbox">
+    </form>
+  </div>
+</body>
+</html>

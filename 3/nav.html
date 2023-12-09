@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    *{
+      box-sizing: border-box;
+      scroll-behavior: smooth;
+    }
+    .container{
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+    .hamburger{
+    position: absolute;
+    right: 13px;
+  }
+  .hamburger span{
+    
+    width: 50px;
+    margin-bottom: 6px;
+    height: 5px;
+    background-color: #000;
+    z-index: 999;
+    display: none;
+  }
+  section{
+    height: 90vw;
+  }
+    .menu ul{
+      display: flex;
+      gap: 20px;
+    }
+    ul li{
+      list-style: none;
+
+    }
+    ul li a{
+      text-decoration: none;
+      color: #000;
+      font-size: 1.2rem;
+    }
+    @media screen and (max-width:996px){
+      .hamburger span{
+        display: block;
+      }
+      
+      .menu ul{
+        position: absolute;
+        right: 3rem;
+        display: flex;
+        align-items: center;
+        flex-direction: column;
+        background-color: rgb(52, 48, 48);
+        padding: 2rem;
+        display: none;
+      }
+      .menu li{
+        padding: 20px;
+      }
+      .menu ul li a{
+        color: #fff;
+      }
+    }
+
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="hamburger">
+      <span></span>
+      <span></span>
+      <span></span>
+    </div>
+    <div class="title">NavBar</div>
+    <div class="menu">
+      <ul>
+        <li><a href="#home">Home</a></li>
+        <li><a href="#products">products</a></li>
+        <li><a href="#questions">Questions</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </div>
+  </div>
+  <section id="home">Home</section>
+  <section id="products">products</section>
+  <section id="questions">questions</section>
+  <section id="contact">contact</section>
+  <script>
+    let ham=document.querySelector('.hamburger');
+    let db=document.querySelector('.menu ul');
+
+    ham.addEventListener('click',function(){
+      db.style.display="block";
+      if (db.style.display="block"){
+        ham.addEventListener('click',function(){
+          db.style.display="none";
+          
+        });
+        
+      }
+    });
+    
+   /*  (function(){
+      ham.addEventListener('click',function(){
+        db.style.dispaly="block"
+      })
+    })() */
+  </script>
+</body>
+</html>
